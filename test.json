@@ -1,0 +1,432 @@
+{
+	private_hand: 3, 15
+	community_cards: 
+	action_history: 
+	active_player_idx: 0
+	strategy: 0.0112854, 0.988715
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 
+	action_history: B
+	active_player_idx: 1
+	strategy: 0.999678, 0.000322151
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 32, 36, 44
+	action_history: BB
+	active_player_idx: 0
+	strategy: 0.446915, 0.244224, 0.308861
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 32, 36, 44
+	action_history: BBC
+	active_player_idx: 1
+	strategy: 0.48212, 0.2365, 0.28138
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 32, 36, 44
+	action_history: BBB
+	active_player_idx: 1
+	strategy: 0.75092, 0.24908
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 32, 36, 44
+	action_history: BBCB
+	active_player_idx: 0
+	strategy: 0.571056, 0.428944
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44
+	action_history: BBCC
+	active_player_idx: 0
+	strategy: 0.481564, 0.20845, 0.309986
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44
+	action_history: BBCCC
+	active_player_idx: 1
+	strategy: 0.31518, 0.53874, 0.14608
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44
+	action_history: BBCCB
+	active_player_idx: 1
+	strategy: 0.46664, 0.53336
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44
+	action_history: BBCCCB
+	active_player_idx: 0
+	strategy: 0.563165, 0.436835
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44
+	action_history: BBBB
+	active_player_idx: 0
+	strategy: 0.572468, 0.139003, 0.288529
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44
+	action_history: BBBBC
+	active_player_idx: 1
+	strategy: 0.31164, 0.5445, 0.14386
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44
+	action_history: BBBBB
+	active_player_idx: 1
+	strategy: 0.47258, 0.52742
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44
+	action_history: BBBBCB
+	active_player_idx: 0
+	strategy: 0.794819, 0.205181
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44
+	action_history: BBCBB
+	active_player_idx: 0
+	strategy: 0.61739, 0.0855738, 0.297036
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44
+	action_history: BBCBBC
+	active_player_idx: 1
+	strategy: 0.3186, 0.52574, 0.15566
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44
+	action_history: BBCBBB
+	active_player_idx: 1
+	strategy: 0.46434, 0.53566
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44
+	action_history: BBCBBCB
+	active_player_idx: 0
+	strategy: 0.863617, 0.136383
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCC
+	active_player_idx: 0
+	strategy: 0.42402, 0.098215, 0.477765
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCCC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCCB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCCCB
+	active_player_idx: 0
+	strategy: 0.0912761, 0.908724
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCBB
+	active_player_idx: 0
+	strategy: 0.546889, 0.0948551, 0.358255
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCBBC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCBBB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCBBCB
+	active_player_idx: 0
+	strategy: 0.078355, 0.921645
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCBB
+	active_player_idx: 0
+	strategy: 0.636259, 0.0807982, 0.282943
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCBBC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCBBB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCCCBBCB
+	active_player_idx: 0
+	strategy: 0.136838, 0.863162
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCC
+	active_player_idx: 0
+	strategy: 0.585482, 0.0913475, 0.323171
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCCC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCCB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCCCB
+	active_player_idx: 0
+	strategy: 0.098623, 0.901377
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBBB
+	active_player_idx: 0
+	strategy: 0.681188, 0.0485495, 0.270263
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBBBC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBBBB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBBBCB
+	active_player_idx: 0
+	strategy: 0.0594379, 0.940562
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCBB
+	active_player_idx: 0
+	strategy: 0.700411, 0.0424395, 0.257149
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCBBC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCBBB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBBBCBBCB
+	active_player_idx: 0
+	strategy: 0.0779698, 0.92203
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCC
+	active_player_idx: 0
+	strategy: 0.632135, 0.0835876, 0.284277
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCCC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCCB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCCCB
+	active_player_idx: 0
+	strategy: 0.138057, 0.861943
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBBB
+	active_player_idx: 0
+	strategy: 0.702793, 0.0404362, 0.256771
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBBBC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBBBB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBBBCB
+	active_player_idx: 0
+	strategy: 0.073537, 0.926463
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCBB
+	active_player_idx: 0
+	strategy: 0.697733, 0.0458067, 0.25646
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCBBC
+	active_player_idx: 1
+	strategy: 0, 0, 1
+
+}
+{
+	private_hand: 14, 38
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCBBB
+	active_player_idx: 1
+	strategy: 1, 0
+
+}
+{
+	private_hand: 3, 15
+	community_cards: 4, 32, 36, 44, 49
+	action_history: BBCBBCBBCB
+	active_player_idx: 0
+	strategy: 0.0885995, 0.911401
+
+}
