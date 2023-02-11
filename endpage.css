@@ -32,9 +32,6 @@ BODY {
     padding: auto;
 }
 .neon {
-
-
-    font-family: 'Monoton', cursive;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
@@ -43,7 +40,6 @@ BODY {
 }
 
 .neon-sub {
-    font-family: 'Monoton', cursive;
     text-align: center;
     text-transform: uppercase;
     color: #fff;

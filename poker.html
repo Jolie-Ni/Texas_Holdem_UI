@@ -263,20 +263,20 @@ function delay(n){
 async function nextStep() {
   console.log("in nextStep");
   if (!card1.flipped) {
-    await delay(1);
+    //alert("Round: " + getRoundInfo());
     card1.flip();
     card2.flip();
     card3.flip();
     
     currentRound = 2;
   } else if(!card4.flipped) {
-    await delay(1);
+    //alert("Round: " + getRoundInfo());
     card4.flip();
     currentRound = 3;
   } else if(!card5.flipped) {
-    await delay(1);
-      card5.flip();
-      currentRound = 4;
+    //alert("Round: " + getRoundInfo());
+    card5.flip();
+    currentRound = 4;
   } else {
     deal();
   }
@@ -340,6 +340,7 @@ function loadStrategy() {
     strategy_dict[key] = strategy[i]["strategy"];
   }
   // alert("here in load:" + strategy_dict["13_29++B"]);
+
   return;
 }
 
@@ -380,7 +381,7 @@ function bigBlind() {
 }
 
 
-function isNewRound(){
+async function isNewRound(){
   console.log("in isNewRound");
   if (roundTerminate.has(actionThisRound)) {
     currentRound += 1;
@@ -397,6 +398,22 @@ function isNewRound(){
       return;
     }
     //alert("newRound:" + getRoundInfo());
+    btn = document.getElementById("checkAct");
+    let btn_check = btn.disabled;
+    btn.disabled = true;
+    btn = document.getElementById("betAct");
+    let btn_bet = btn.disabled;
+    btn.disabled = true;
+    btn = document.getElementById("foldAct");
+    let btn_fold = btn.disabled;
+    btn.disabled = true;
+    await delay(2);
+    btn = document.getElementById("checkAct");
+    btn.disabled = btn_check;
+    btn = document.getElementById("betAct");
+    btn.disabled = btn_bet;
+    btn = document.getElementById("foldAct");
+    btn.disabled = btn_fold;
     nextStep();
   }
   
@@ -450,7 +467,9 @@ function convertToCard(CardObject){
       alert("Invalid Computer Action!");
       return false;
   }
-  return c_value;
+
+
+  return c_value < 10 ? "0" + c_value : c_value;
 }
 
 function weighted_random(weights) {
@@ -468,15 +487,20 @@ function weighted_random(weights) {
     return i;
 }
 
-function computeAction(roundNum){
+async function computeAction(roundNum){
 
   // add private card
   var lookupKey = "";
+  var gameState = "";
   var private_card = [convertToCard(OppCard1), convertToCard(OppCard2)];
   private_card.sort(sortNumbers);
 
   lookupKey += private_card[0] + "_";
   lookupKey += private_card[1] + "+";
+
+
+  gameState += private_card[0];
+  gameState += private_card[1] + ";";
 
   var community_cards = [];
   // add community card
@@ -491,12 +515,12 @@ function computeAction(roundNum){
   } else if (currentRound == 3) {
     // four
     community_cards = [convertToCard(card1), convertToCard(card2), convertToCard(card3)];
-    community_cards.sort(sortNumbers);
+    //community_cards.sort(sortNumbers);
     community_cards.push(convertToCard(card4));
   } else if (currentRound == 4) {
     // five
     community_cards = [convertToCard(card1), convertToCard(card2), convertToCard(card3)];
-    community_cards.sort(sortNumbers);
+    //community_cards.sort(sortNumbers);
     community_cards.push(convertToCard(card4));
     community_cards.push(convertToCard(card5));
     // community_cards = [convertToCard(card1), convertToCard(card2), convertToCard(card3), convertToCard(card4), convertToCard(card5)];
@@ -504,34 +528,52 @@ function computeAction(roundNum){
     return false;
   }
 
-  // community_cards.sort();
   for (var i = 0; i < community_cards.length; i++) {
     if (i != community_cards.length - 1){
       lookupKey += community_cards[i] + "_";
     } else {
       lookupKey += community_cards[i];
     }
+    gameState += community_cards[i];
   }
+
+  gameState += ";";
 
   lookupKey += "+";
   // add action history
   lookupKey += actionHistory;
-  var strategy_arr = strategy_dict[lookupKey];
-  var idx = weighted_random(strategy_arr);
-  switch (idx) {
-    case 0:
-      return "B";
-    case 1:
-      return "F";
-    case 2:
-      return "C";
-    default:
-      return "F";
-  }
+  gameState += actionHistory + ";";
+
+  var strategy_arr = [0.33, 0.33, 0.33];
+  
+  let db = "https://jolieni.com/api/strategy/get?gamestate=" + gameState;
+  return fetch(db, 
+  {
+    method : 'GET',
+  }).then((response) => response.json()).then((data) => {
+    console.log("game state is: " + gameState);
+
+    strategy_arr = [data["bet"], data["fold"], data["check"]];
+    console.log("strategy : " + strategy_arr);
+    var idx = weighted_random(strategy_arr);
+    switch (idx) {
+      case 0:
+        return "B";
+      case 1:
+        return "F";
+      case 2:
+        return "C";
+      default:
+        return "F";
+    }
+
+  });
+  
 }
 
 async function computerAction(){
   console.log("in computerAction");
+  await delay(0.5);
   var img = document.getElementById('comp-dot');
   var interval = window.setInterval(function(){
     if(img.style.visibility == 'hidden'){
@@ -596,7 +638,7 @@ function endGame(playerFold=false, compFold=false) {
   } 
   else if (compFold) {
     moneyWon = potsize - playerContribution;
-    //alert("The computer has fold, you win " + moneyWon + " dollars!");
+    alert("The computer has fold, you win " + moneyWon + " dollars!");
     
     aiAction.innerHTML = "FOLD";
   }
