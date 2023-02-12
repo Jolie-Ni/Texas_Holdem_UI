@@ -556,6 +556,7 @@ async function computeAction(roundNum){
     strategy_arr = [data["bet"], data["fold"], data["check"]];
     console.log("strategy : " + strategy_arr);
     var idx = weighted_random(strategy_arr);
+    console.log("idx : " + idx);
     switch (idx) {
       case 0:
         return "B";
@@ -585,7 +586,8 @@ async function computerAction(){
   await delay(5);
   clearInterval(interval);
   img.style.visibility = 'hidden';
-  var action = computeAction();
+  var action = await computeAction();
+  console.log("action = " + action);
   if (!action) {
     return false;
   }
