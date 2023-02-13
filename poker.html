@@ -545,13 +545,17 @@ async function computeAction(roundNum){
   gameState += actionHistory + ";";
 
   var strategy_arr = [0.33, 0.33, 0.33];
+  let allowCheck = canCheck();
+
+  let url = 'https://jolieni.com/api/strategy/get?gamestate=' + gameState + '&allowcheck=' + allowCheck;
+  // let url = 'http://localhost:8080/api/strategy/get?gamestate=' + gameState + '&allowcheck=' + allowCheck;
   
-  let db = "https://jolieni.com/api/strategy/get?gamestate=" + gameState;
-  return fetch(db, 
+  return fetch(url, 
   {
     method : 'GET',
   }).then((response) => response.json()).then((data) => {
     console.log("game state is: " + gameState);
+    console.log("allow check: " + allowCheck);
 
     strategy_arr = [data["bet"], data["fold"], data["check"]];
     console.log("strategy : " + strategy_arr);
