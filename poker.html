@@ -198,46 +198,50 @@ function deal() {
   potCount.innerHTML = 0;
   terminateGame = false;
 
-  strategy_dict = {};
   if (deck.length()<7) {
     deck.reset();
     deck.shuffle();
-  }  
-  var strategy = jsonObject["strategies"];
-  var rand_idx = Math.floor(Math.random() * strategy.length);
-  var s_deck = strategy[rand_idx]["deck"];
-  if (s_deck.length != 9){
-    return;
   }
-  var s_com_cards = [s_deck[4], s_deck[5], s_deck[6], s_deck[7], s_deck[8]];
-  var s_p_cards = [s_deck[0], s_deck[1]];
-  var s_c_cards = [s_deck[2], s_deck[3]];
 
   var r = Math.random();
   if (r < 0.5) {
     playerBigBlind = true;
     compBigBlind = false;
-    OppCard1 = new Card(OMPtoCard(s_p_cards[0]));
-    OppCard2= new Card(OMPtoCard(s_p_cards[1]));
-    playerCard1 = new Card(OMPtoCard(s_c_cards[0]));
-    playerCard2 = new Card(OMPtoCard(s_c_cards[1]));
     
   }
   else {
     compBigBlind = true;
     playerBigBlind = false;
-    playerCard1 = new Card(OMPtoCard(s_p_cards[0]));
-    playerCard2 = new Card(OMPtoCard(s_p_cards[1]));
-    OppCard1 = new Card(OMPtoCard(s_c_cards[0]));
-    OppCard2 = new Card(OMPtoCard(s_c_cards[1]));
-
   }
 
-  card1 = new Card(OMPtoCard(s_com_cards[0]));
-  card2 = new Card(OMPtoCard(s_com_cards[1]));
-  card3 = new Card(OMPtoCard(s_com_cards[2]));
-  card4 = new Card(OMPtoCard(s_com_cards[3]));
-  card5 = new Card(OMPtoCard(s_com_cards[4]));
+
+  var player_hand = [];
+  var computer_hand = [];
+
+  for(var i = 0; i < 2; i++){
+    player_hand.push(deck.deal());
+    computer_hand.push(deck.deal());
+  }
+
+  playerCard1 = new Card(player_hand[0]);
+  playerCard2 = new Card(player_hand[1]);
+
+  OppCard1 = new Card(computer_hand[0]);
+  OppCard2 = new Card(computer_hand[1]);
+
+  var communituCards = [];
+
+  for(var i = 0; i < 5; i++){
+    communituCards.push(deck.deal());
+  }
+
+  console.log(player_hand[0]);
+
+  card1 = new Card(communituCards[0]);
+  card2 = new Card(communituCards[1]);
+  card3 = new Card(communituCards[2]);
+  card4 = new Card(communituCards[3]);
+  card5 = new Card(communituCards[4]);
 
 
   card1.displayCard("card1",false);  
@@ -306,7 +310,7 @@ const equals = (a, b) =>
   a.length === b.length &&
   a.every((v, i) => v === b[i]);
 
-loadStrategy();
+
 
 function loadStrategy() {
   var strategy = jsonObject["strategies"];
